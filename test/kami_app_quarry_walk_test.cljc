@@ -8,7 +8,7 @@
 
 (deftest namespace-loads
   (testing "the restored CLJC namespace loads"
-    (is (some? (the-ns 'kami-app-quarry-walk)))))
+    (is (some? (find-ns 'kami-app-quarry-walk)))))
 
 (deftest config-shape
   (is (= "quarry" qw/biome))
