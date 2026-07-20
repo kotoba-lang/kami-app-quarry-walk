@@ -1,6 +1,6 @@
 # kotoba-lang/kami-app-quarry-walk
 
-Zero-dep portable `.cljc` — restored from the legacy `kami-engine/kami-app-quarry-walk`
+Safety-gated `.kotoba` configuration contract restored from the legacy `kami-engine/kami-app-quarry-walk`
 Rust crate (deleted in kotoba-lang/kami-engine PR #82 "Remove Rust workspace from
 kami-engine") as part of the **clj-wgsl migration** (ADR-2607010930, `com-junkawasaki/root`).
 
@@ -13,14 +13,14 @@ pipeline code here: game logic = biome selection + spawn + camera/input wiring. 
 rendering reuses kami_pipelines.", per its own doc comment).
 
 What IS portable is the game's **configuration**: spawn position, camera mode,
-terrain/water adapter parameters. This namespace captures that configuration as plain
-CLJC data — a specification a native/WASM host could read to reconstruct the original
-scene setup, rather than a re-implementation of the builder orchestration itself.
+terrain/water adapter parameters. Typed scalar exports preserve that configuration
+without exposing an open-ended host map. Rendering, input, terrain streaming, WebGPU,
+physics, and the game loop remain capability-gated Kami responsibilities.
 
 ## Status
 
-Restored — 2 tests / 7 assertions, 0 failures (the original had no `#[test]`s; this
-provides basic shape coverage of the ported configuration).
+The reference evaluator, restricted JavaScript, and instantiated typed Wasm must agree
+on observable values and ABI behavior. Generated Wasm bytes need not be identical.
 
 ## Develop
 
