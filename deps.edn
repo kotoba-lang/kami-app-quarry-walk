@@ -1,7 +1,7 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
  :aliases {:test {:extra-paths ["test"]
-                  ;; kotoba-lang/compiler is a TEST-ONLY dependency: it is needed by
+                  ;; kotoba-lang/amu is a TEST-ONLY dependency: it is needed by
                   ;; the tests that compile src/kami_app_quarry_walk.kotoba and require
                   ;; it to agree with src/kami_app_quarry_walk.cljc (ADR 0001 as
                   ;; amended, and ADR-2608134800 in com-junkawasaki/root). Consumers
@@ -10,8 +10,8 @@
                   ;; the same boundary.
                   :extra-deps {io.github.cognitect-labs/test-runner
                                {:git/tag "v0.5.1" :git/sha "dfb30dd"}
-                               io.github.kotoba-lang/compiler
-                               {:git/url "https://github.com/kotoba-lang/compiler.git"
+                               io.github.kotoba-lang/amu
+                               {:git/url "https://github.com/kotoba-lang/amu.git"
                                 :git/sha "abf9e5b8125040b1c32956ed5af133f5f962298b"}}
                   :main-opts ["-m" "cognitect.test-runner"]}
            :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
