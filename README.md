@@ -25,5 +25,5 @@ on observable values and ABI behavior. Generated Wasm bytes need not be identica
 ## Develop
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
