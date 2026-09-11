@@ -1,6 +1,6 @@
 (ns kami-app-quarry-walk-parity-test
   "Parity gate between `src/kami_app_quarry_walk.kotoba` (the semantic authority) and
-  `src/kami_app_quarry_walk.cljc` (the load path a Clojure/ClojureScript consumer
+  `src/kami_app_quarry_walk.cljk` (the load path a Clojure/ClojureScript consumer
   requires).
 
   Shape follows `kotoba-lang/css` (`css.kotoba-parity-test`), `kotoba-lang/dsl-core`
@@ -10,7 +10,7 @@
   test-only dependency.
 
   WHY THE .cljc EXISTS AT ALL. `b55cf842` (2026-07-20) deleted
-  `src/kami_app_quarry_walk.cljc` and put the `.kotoba` at that path. A `.kotoba` is on
+  `src/kami_app_quarry_walk.cljk` and put the `.kotoba` at that path. A `.kotoba` is on
   no Clojure classpath, so `kami-app-quarry-walk` stopped being loadable by every
   runtime this workspace ranks above the native path. The `.cljc` restored beside it is
   the load path; the `.kotoba` remains the authority.

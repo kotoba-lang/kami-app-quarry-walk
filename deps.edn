@@ -8,7 +8,7 @@
  :aliases {:test {:extra-paths ["test"]
                   ;; kotoba-lang/amu is a TEST-ONLY dependency: it is needed by
                   ;; the tests that compile src/kami_app_quarry_walk.kotoba and require
-                  ;; it to agree with src/kami_app_quarry_walk.cljc (ADR 0001 as
+                  ;; it to agree with src/kami_app_quarry_walk.cljk (ADR 0001 as
                   ;; amended, and ADR-2608134800 in com-junkawasaki/root). Consumers
                   ;; require only the .cljc and must not be made to drag the compiler
                   ;; in behind it — kotoba-lang/css, /dsl-core, /async and /postfx set

@@ -82,7 +82,7 @@
   ;; step in dsl-core and async). src/ is exactly two files: the .kotoba authority
   ;; and the .cljc load path the parity test holds equal to it. A third file, or a
   ;; second .cljc, would be a fork of the authority and still fails here.
-  (is (= ["src/kami_app_quarry_walk.cljc"
+  (is (= ["src/kami_app_quarry_walk.cljk"
           "src/kami_app_quarry_walk.kotoba"]
          (->> (file-seq (io/file "src"))
               (filter #(.isFile %))
