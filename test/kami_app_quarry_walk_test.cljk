@@ -1,6 +1,6 @@
 (ns kami-app-quarry-walk-test
-  (:require [clojure.java.io :as io]
-            [clojure.java.shell :as shell]
+  (:require [kotoba.bytes :as kbytes] [clojure.java.io :as io]
+            [kotoba.process :as shell]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is testing]]
             [kotoba.compiler.core :as compiler]
@@ -33,7 +33,7 @@
        4))
 
 (defn base64 [value]
-  (.encodeToString (java.util.Base64/getEncoder) value))
+  (kbytes/base64-encode value))
 
 (defn host-value [value]
   (cond
@@ -50,7 +50,7 @@
 (deftest restricted-javascript-and-typed-wasm-conform
   (let [javascript (compiler/compile-source source :js-kotoba-v1)
         wasm (compiler/compile-source source :wasm32-browser-kotoba-v1)
-        js64 (base64 (.getBytes ^String (:source javascript) "UTF-8"))
+        js64 (base64 (kbytes/utf8-bytes ^String (:source javascript)))
         wasm64 (base64 ^bytes (:bytes wasm))
         entries (map (fn [[function value]]
                        [(name function) (host-value value)])
