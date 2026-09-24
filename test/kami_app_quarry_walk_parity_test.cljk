@@ -40,7 +40,7 @@
      constant crosses as a nullary export. Value is compared; the binding form is not.
 
   4. `main` is a wasm entry point, not library API, and is not mirrored."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kami-app-quarry-walk :as quarry]
             [kotoba.compiler.core :as compiler]
             [kotoba.compiler.ir :as ir]))
